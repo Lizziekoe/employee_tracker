@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  database: employee_track_development
+  template: template0
+
+test:
+  adapter: postgresql
+  database: employee_track_test
+  template: template0
