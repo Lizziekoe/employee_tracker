@@ -40,10 +40,10 @@ get('/employees/:id/edit') do
 end
 
 patch("/employees/:id") do
-  @division = Division.find(params.fetch("id").to_i())
+  # @division = Division.find(params.fetch("id").to_i())
   name = params.fetch("name")
   @employee = Employee.find(params.fetch("id").to_i())
   @employee.update({:name => name})
   @employees = Employee.all()
-  erb(:employees)
+  redirect('/')
 end
