@@ -1,5 +1,25 @@
 <h1>Update <%=@employee.name() %> </h1>
 
+  <ul>
+  <% @employee.projects().each() do |project| %>
+  <li><%= project.description %></li>
+    <% end %>
+  </ul>
+
+  <p>Create a new project:</p>
+
+  <form action='/projects' method='post'>
+    <input name="employee_id" type="hidden" value="<%= @employee.id() %>">
+    <label for='description'>Project Name</label>
+    <input id='description' name='description' type='text'>
+
+    <button type="submit">Add Project</button>
+  </form>
+
+
+
+
+
 <form action="/employees/<%= @employee.id() %>" method="post">
   <input name="_method" type="hidden" value="patch">
   <label for="name">Redescribe your employee:</label>
